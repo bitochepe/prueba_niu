@@ -1,0 +1,32 @@
+<div class="contenedor">
+    <div class="cargar">
+        <h1 style="padding-bottom: 30px;" >Lista de colaboradores</h1>
+        <button type="button" class="btn btn-primary" (click)="getAll()" style=" border-radius: 6px;">Cargar colaboradores</button>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr class="table-dark" style="text-align: center; vertical-align: middle;">
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Profesion</th>
+                <th scope="col">Estado civil</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let cl of Lcolaboradores">
+            <tr class="table-default" style="text-align: center; vertical-align: middle;"> 
+                <td scope="row">{{cl.IDCOLABORADOR}}</td>
+                <td>{{cl.NOMBRE}}</td>
+                <td>{{cl.APELLIDO}}</td>
+                <td>{{cl.DIRECCION}}</td>
+                <td>{{cl.EDAD}}</td>
+                <td>{{cl.PROFESION}}</td>
+                <td>{{cl.ESTADOCIVIL}}</td>
+                <td><button type="button" class="btn btn-info" (click)="getInfo(cl.EDAD)" style="border-radius: 6px; ">Nivel de riesgo</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
